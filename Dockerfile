@@ -54,7 +54,7 @@ RUN echo 'dev ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/dev
 USER dev
 WORKDIR /home/dev
 
-RUN wget https://github.com/neovim/neovim/releases/download/v0.9.4/nvim-linux64.tar.gz && \
+RUN wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz && \
   tar -xzf nvim-linux64.tar.gz && \
   sudo mv nvim-linux64 /opt/nvim && \
   rm nvim-linux64.tar.gz

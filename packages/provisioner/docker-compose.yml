@@ -1,15 +1,15 @@
 services:
-  rdserver:
-    image: robotics-deployment:server-dev
+  rdprovisioner:
+    image: robotics-deployment:provisioner-dev
     privileged: true
-    container_name: rdserver 
+    container_name: rdprovisioner 
     network_mode: host
     environment:
       - DISPLAY=${DISPLAY}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
-    working_dir: /opt/rdserver
+    working_dir: /opt/rdprovisioner
     volumes:
-      - ~/repos/roboticsdeployment/server:/opt/rdserver
+      - ~/repos/roboticsdeployment/provisioner:/opt/rdprovisioner
       - ~/.gitconfig:/home/dev/.gitconfig
       - ~/.config/gcloud:/home/dev/.config/gcloud
       - ~/.config/lazygit:/home/dev/.config/lazygit
