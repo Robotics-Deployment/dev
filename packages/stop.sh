@@ -11,5 +11,5 @@ fi
 PACKAGE_NAME=$1
 cd $PACKAGE_NAME
 
-echo "Downing $PACKAGE_NAME"
-docker compose down
+echo "Stopping $PACKAGE_NAME"
+docker compose stop
