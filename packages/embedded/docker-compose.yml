@@ -11,6 +11,10 @@ services:
     volumes:
       - ~/repos/roboticsdeployment/embedded:/opt/rdembedded
       - ~/.gitconfig:/home/dev/.gitconfig
+      - ~/.cargo/config.toml:/opt/cargo/config.toml
+      - ~/.cargo/credentials.toml:/opt/cargo/credentials.toml
+      - ~/.cargo/registry:/opt/cargo/registry
+      - ~/.ssh:/home/dev/.ssh
       - ~/.config/gcloud:/home/dev/.config/gcloud
       - ~/.config/lazygit:/home/dev/.config/lazygit
       - ~/.config/nvim:/home/dev/.config/nvim

@@ -8,7 +8,7 @@ build_package() {
 	echo "Building project package: $package_name"
 	(
 		cd ../../"$package_name"
-		docker compose build
+		docker buildx build --ssh default=$SSH_AUTH_SOCK --build-arg CARGO_REGISTRIES_RD_TOKEN=${CARGO_REGISTRIES_RD_TOKEN} -t robotics-deployment:"$package_name" -f Dockerfile .
 	)
 
 	echo "Building dev environment for package: $package_name"
