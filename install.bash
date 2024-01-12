@@ -19,7 +19,6 @@ dest_dir="$HOME/.config/alacritty"
 
 if [ ! -d "$dest_dir" ]; then
 	echo "Alacritty not installed. Skipping..."
-	exit 1
 fi
 
 cp -r ./alacritty/* "$dest_dir/"
