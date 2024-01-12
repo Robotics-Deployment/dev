@@ -1,15 +1,15 @@
 services:
-  rdprovisioner:
-    image: robotics-deployment:provisioner-dev
+  rdmodels:
+    image: robotics-deployment:models-dev
     privileged: true
-    container_name: rdprovisioner 
+    container_name: rdmodels
     network_mode: host
     environment:
       - DISPLAY=${DISPLAY}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
-    working_dir: /opt/rdprovisioner
+    working_dir: /opt/rdmodels
     volumes:
-      - ~/repos/roboticsdeployment/provisioner:/opt/rdprovisioner
+      - ~/repos/roboticsdeployment/models:/opt/rdmodels
       - ~/.gitconfig:/home/dev/.gitconfig
       - ~/.cargo/config.toml:/opt/cargo/config.toml
       - ~/.cargo/credentials.toml:/opt/cargo/credentials.toml
