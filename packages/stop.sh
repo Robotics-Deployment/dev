@@ -2,14 +2,23 @@
 
 cd "$(dirname "$0")"
 
-# Check if an argument is provided
+stop_package() {
+	local package_name=$1
+
+	echo "Stopping $package_name"
+	(
+		cd "$package_name"
+		docker compose stop
+	)
+}
+
 if [ $# -eq 0 ]; then
-	echo "No argument provided. Please provide a package name."
-	exit 1
+	for dir in */; do
+		if [ -d "$dir" ]; then
+			dir=${dir%/} # Remove trailing slash
+			stop_package "$dir"
+		fi
+	done
+else
+	stop_package "$1"
 fi
-
-PACKAGE_NAME=$1
-cd $PACKAGE_NAME
-
-echo "Stopping $PACKAGE_NAME"
-docker compose stop

@@ -2,14 +2,23 @@
 
 cd "$(dirname "$0")"
 
-# Check if an argument is provided
+down_package() {
+	local package_name=$1
+
+	echo "Downing $package_name"
+	(
+		cd "$package_name"
+		docker compose down
+	)
+}
+
 if [ $# -eq 0 ]; then
-	echo "No argument provided. Please provide a package name."
-	exit 1
+	for dir in */; do
+		if [ -d "$dir" ]; then
+			dir=${dir%/} # Remove trailing slash
+			down_package "$dir"
+		fi
+	done
+else
+	down_package "$1"
 fi
-
-PACKAGE_NAME=$1
-cd $PACKAGE_NAME
-
-echo "Downing $PACKAGE_NAME"
-docker compose down
