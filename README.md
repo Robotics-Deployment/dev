@@ -15,7 +15,7 @@ It is also recommended to install:
 - NerdFont
 
 The robotics deployment folder structure is as follows:
-/...<your root folder>.../roboticsdeployment/dev
+/...<your root folder>.../roboticsdeployment/dev (This repository)
 /...<your root folder>.../roboticsdeployment/server
 /...<your root folder>.../roboticsdeployment/ui
 /...<your root folder>.../roboticsdeployment/package...

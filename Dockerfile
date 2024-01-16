@@ -60,10 +60,10 @@ RUN wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.
   sudo mv nvim-linux64 /opt/nvim && \
   rm nvim-linux64.tar.gz
 
-RUN wget https://nodejs.org/dist/v20.9.0/node-v20.9.0-linux-x64.tar.xz && \
-  tar -xJf node-v20.9.0-linux-x64.tar.xz && \
-  sudo mv node-v20.9.0-linux-x64 /opt/node && \
-  rm node-v20.9.0-linux-x64.tar.xz
+RUN wget https://nodejs.org/dist/v20.11.0/node-v20.11.0-linux-x64.tar.xz && \
+  tar -xJf node-v20.11.0-linux-x64.tar.xz && \
+  sudo mv node-v20.11.0-linux-x64 /opt/node && \
+  rm node-v20.11.0-linux-x64.tar.xz
 
 RUN wget -O lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v0.40.2/lazygit_0.40.2_Linux_x86_64.tar.gz" && \
   tar xf lazygit.tar.gz lazygit && \
