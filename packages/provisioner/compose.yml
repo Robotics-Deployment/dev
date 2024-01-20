@@ -10,6 +10,7 @@ services:
     working_dir: /opt/rdprovisioner
     volumes:
       - ~/repos/roboticsdeployment/provisioner:/opt/rdprovisioner
+      - ~/.aws:/home/dev/.aws
       - ~/.gitconfig:/home/dev/.gitconfig
       - ~/.cargo/config.toml:/opt/cargo/config.toml
       - ~/.cargo/credentials.toml:/opt/cargo/credentials.toml
