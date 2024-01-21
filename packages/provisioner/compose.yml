@@ -9,6 +9,8 @@ services:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
     working_dir: /opt/rdprovisioner
     volumes:
+      - /boot:/boot:ro # guestfish req
+      - /lib/modules:/lib/modules:ro # guestfish req
       - ~/repos/roboticsdeployment/provisioner:/opt/rdprovisioner
       - ~/.aws:/home/dev/.aws
       - ~/.gitconfig:/home/dev/.gitconfig
