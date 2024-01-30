@@ -7,13 +7,11 @@ services:
     environment:
       - DISPLAY=${DISPLAY}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - CARGO_REGISTRIES_RD_TOKEN=${CARGO_REGISTRIES_RD_TOKEN}
     working_dir: /opt/rdmodels
     volumes:
       - ~/repos/roboticsdeployment/models:/opt/rdmodels
       - ~/.gitconfig:/home/dev/.gitconfig
-      - ~/.cargo/config.toml:/opt/cargo/config.toml
-      - ~/.cargo/credentials.toml:/opt/cargo/credentials.toml
-      - ~/.cargo/registry:/opt/cargo/registry
       - ~/.ssh:/home/dev/.ssh
       - ~/.config/gcloud:/home/dev/.config/gcloud
       - ~/.config/lazygit:/home/dev/.config/lazygit
@@ -24,4 +22,3 @@ services:
       - ~/.cache/nvim:/home/dev/.cache/nvim
       - /tmp/.X11-unix:/tmp/.X11-unix
     command: ["sleep", "infinity"]
-
