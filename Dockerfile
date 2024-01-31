@@ -80,8 +80,22 @@ RUN wget https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint
   sudo mv hadolint-Linux-x86_64 /usr/local/bin/hadolint && \
   sudo chmod +x /usr/local/bin/hadolint
 
+RUN wget https://github.com/artempyanykh/marksman/releases/download/2023-12-09/marksman-linux-x64 && \
+  sudo mv marksman-linux-x64 /usr/local/bin/marksman && \
+  sudo chmod +x /usr/local/bin/marksman
+
 ENV PATH=/opt/nvim/bin:$PATH
 ENV PATH=/opt/node/bin:$PATH
 ENV PATH=/opt/lua/bin:$PATH
 
-RUN npm install -g vscode-json-languageserver yaml-language-server dockerfile-language-server-nodejs svelte-language-server typescript-language-server eslint prettier playwright vitest
+RUN npm install -g \
+  vscode-json-languageserver \
+  yaml-language-server \
+  dockerfile-language-server-nodejs \
+  svelte-language-server \
+  typescript-language-server \
+  eslint \
+  prettier \
+  playwright \
+  vitest \
+  @tailwindcss/language-server
