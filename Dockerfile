@@ -76,8 +76,12 @@ RUN mkdir -p lua-language-server && \
   sudo mv lua-language-server /opt/lua && \
   rm -rf lua-language-server.tar.gz
 
+RUN wget https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64 && \
+  sudo mv hadolint-Linux-x86_64 /usr/local/bin/hadolint && \
+  sudo chmod +x /usr/local/bin/hadolint
+
 ENV PATH=/opt/nvim/bin:$PATH
 ENV PATH=/opt/node/bin:$PATH
 ENV PATH=/opt/lua/bin:$PATH
 
-RUN npm install -g vscode-json-languageserver
+RUN npm install -g vscode-json-languageserver yaml-language-server dockerfile-language-server-nodejs svelte-language-server typescript-language-server eslint prettier playwright vitest
