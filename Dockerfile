@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   xsel \
   cmake \
   unzip \
+  tree \
   openssh-client \
   python3-venv \
   && rm -rf /var/lib/apt/lists/*
@@ -98,4 +99,8 @@ RUN npm install -g \
   prettier \
   playwright \
   vitest \
-  @tailwindcss/language-server
+  @tailwindcss/language-server \
+  tree-sitter-css \
+  tree-sitter-svelte \
+  tree-sitter \
+  nodemon
